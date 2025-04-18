@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* font-family: "Lora", serif;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
+
+font-family: "Playfair Display", serif;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal; */
+
+#sobre-nosotros {
+    margin-top: 100px; /* Ajusta este valor si necesitas más o menos espacio */
+  }
+
+#sobre-nosotros h2{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    color: orange;
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-image: url('../img/doctor-563428_1280-min.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  backdrop-filter: blur(5px);
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+  color: #333;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.navbar {
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  position: fixed; 
+  top: 0;
+  left: 0; 
+  width: 100%;
+  z-index: 100; 
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal; 
+  }
+
+.navbar-brand {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 18px;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+.mission,
+.vision {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333; 
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  align-items: center; 
+}
+
+.mission img,
+.vision img {
+  max-width: 150px; 
+  height: auto;
+  margin-right: 15px; /
+}
+
+.vision img {
+  margin-left: 15px; 
+  margin-right: 0;
+}
+
+.mission p,
+.vision p {
+  margin-top: 0; 
+  font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.mission strong,
+.vision strong {
+    color: orange;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.history {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 100px;
+}
+
+.history h3 {
+  color: orange; 
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.history p {
+  margin-top: 10px;
+}
+
+.footer {
+  background-color: #007bff !important;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

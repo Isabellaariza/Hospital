@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitality</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="img" href="../img/estetoscopio.png">
+    <link rel="stylesheet" href="../CSS2/index.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Hospitality</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+
+    <h2>Iniciar Sesión</h2>
+
+    <form>
+        <div class="mb-3">
+          <label for="usuario" class="form-label">Usuario</label>
+          <input type="text" class="form-control" id="usuario" placeholder="Usuario" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+        <div class="mb-3">
+          <label for="contrasena" class="form-label">Contraseña</label>
+          <input type="password" id="contrasena" class="form-control" aria-describedby="passwordHelpInline">
+        </div>
+        <button type="button" class="btn btn-primary" id="boton-inicio-sesion">Iniciar Sesión</button>
+    </form>
+
+    <script>
+        const usuarioAdmin = "admin";
+        const contrasenaAdmin = "1234";
+
+        const usuarioInput = document.getElementById('usuario');
+        const contrasenaInput = document.getElementById('contrasena');
+        const botonInicioSesion = document.getElementById('boton-inicio-sesion');
+        const mensajeError = document.getElementById('error-mensaje');
+
+        botonInicioSesion.addEventListener('click', function() {
+            const usuarioIngresado = usuarioInput.value;
+            const contrasenaIngresada = contrasenaInput.value;
+
+            if (usuarioIngresado === usuarioAdmin && contrasenaIngresada === contrasenaAdmin) {
+                // ¡Si el usuario y la contraseña son correctos, ve a la página del administrador!
+                window.location.href = "../HTML/administrador.html";
+            } else {
+                // Si no son correctos, redirige directamente a la página principal
+                window.location.href = "../HTML/principal.html";
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicamentos</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="img" href="../img/estetoscopio.png">
+  <link rel="stylesheet" href="../CSS2/medicamentos.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Hospitality</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="../HTML/administrador.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="../HTML/pacientes.html">Pacientes</a></li>
+          <li class="nav-item"><a class="nav-link active" href="../HTML/medicamentos.html">Medicamentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="../HTML/vacunas.html">Vacunas</a></li>
+          <li class="nav-item"><a class="nav-link" href="../HTML/habitaciones.html">Habitaciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="../HTML/index.html">Salir</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h2>Medicamentos</h2>
+  <div class="boton" style="text-align: right; margin-bottom: 20px;">
+    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#MedicineModal">
+      Registrar Medicamento
+  </div>
+  <table class="table table-success table-striped" id="medicamentosTable">
+    <thead>
+      <tr>
+        <th>Nombre del Medicamento</th>
+        <th>Forma Farmacéutica</th>
+        <th>Dosis</th>
+        <th>Vía de Administración</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Paracetamol</td>
+        <td>Tabletas, jarabe, supositorios</td>
+        <td>Varía según la presentación y la edad. Generalmente, 500 mg a 1 g cada 6-8 horas en adultos</td>
+        <td>Oral, rectal</td>
+        <td>2.000</td>
+      </tr>
+      <tr>
+        <td>Ibuprofeno</td>
+        <td>Tabletas, cápsulas, suspensión oral</td>
+        <td>Varía según la presentación y la edad. Generalmente, 200 mg a 400 mg cada 6-8 horas en adultos</td>
+        <td>Oral</td>
+        <td>2.000</td>
+      </tr>
+      <tr>
+        <td>Amoxicilina</td>
+        <td>Cápsulas, suspensión oral</td>
+        <td>Varía según la presentación y la edad. Generalmente, 500 mg cada 8 horas en adultos</td>
+        <td>Oral</td>
+        <td>2.500</td>
+      </tr>
+      <tr>
+        <td>Omeprazol</td>
+        <td>Cápsulas, tabletas</td>
+        <td>Varía según la presentación y la condición a tratar. Generalmente, 20 mg a 40 mg al día en adultos</td>
+        <td>Oral</td>
+        <td>2.500</td>
+      </tr>
+      <tr>
+        <td>Loratadina</td>
+        <td>Tabletas, jarabe</td>
+        <td>10 mg al día en adultos</td>
+        <td>Oral</td>
+        <td>3.500</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="modal fade" id="MedicineModal" tabindex="-1" aria-labelledby="MedicineModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="MedicineModalLabel">Registro de nuevo Medicamento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <form id="medicineForm">
+                    <div class="mb-3">
+                        <label for="nmedi" class="form-label">Nombre del medicamento</label>
+                        <input type="text" class="form-control" id="nmedi" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ffmedi" class="form-label">Forma Farmacéutica</label>
+                        <input type="text" class="form-control" id="ffmedi" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dmedi" class="form-label">Dosis</label>
+                        <input type="text" class="form-control" id="dmedi">
+                    </div>
+                    <div class="mb-3">
+                        <label for="vamedi" class="form-label">Vía de Administración</label>
+                        <input type="text" class="form-control" id="vamedi" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pmedi" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="pmedi" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="registerMedicineButton">Registrar Medicamento</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('registerMedicineButton').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const nombreMedi = document.getElementById('nmedi').value;
+        const formaFarma = document.getElementById('ffmedi').value;
+        const dosisMedi = document.getElementById('dmedi').value;
+        const viaAdmin = document.getElementById('vamedi').value;
+        const precioMedi = document.getElementById('pmedi').value;
+
+        if (nombreMedi && formaFarma && viaAdmin && precioMedi) {
+            const table = document.getElementById('medicamentosTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            newRow.insertCell(0).textContent = nombreMedi;
+            newRow.insertCell(1).textContent = formaFarma;
+            newRow.insertCell(2).textContent = dosisMedi;
+            newRow.insertCell(3).textContent = viaAdmin;
+            newRow.insertCell(4).textContent = precioMedi;
+
+            alert('Medicamento registrado correctamente');
+
+            var modal = bootstrap.Modal.getInstance(document.getElementById('MedicineModal'));
+            modal.hide();
+
+            document.getElementById('medicineForm').reset();
+        } else {
+            alert('Por favor, completa los campos obligatorios.');
+        }
+    });
+  </script>
+
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+
+<footer>
+  <div class="footer">
+      <p>&copy; 2025 Hospitality</p>
+  </div>
+</footer>
+</body>
+</html>

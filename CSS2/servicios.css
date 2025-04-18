@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* font-family: "Lora", serif;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
+
+font-family: "Playfair Display", serif;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal; */
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-image: url('../img/doctor-563428_1280-min.jpg');
+    background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    backdrop-filter: blur(5px);
+    min-height: 100vh; /* Asegura que el body tenga al menos la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el contenido principal hacia arriba y el footer hacia abajo */
+    align-items: center;
+    color: #333;
+    width: 100%;
+    overflow-x: hidden;
+}
+  
+.navbar {
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 100;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; 
+}
+    
+.navbar-brand {
+    font-size: 32px;
+    color: #ffffff;
+}
+    
+.navbar-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 18px;
+}
+    
+.nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+}
+    
+.nav-link:hover,
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+h2 {
+    color: orange; 
+    text-align: center; 
+    font-size: 40px; 
+    display: inline-block; 
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+    margin-top: 10%;
+}
+
+.carousel-inner img {
+    max-height: 300px; 
+    width: auto !important;
+    margin: 0; 
+    display: block; 
+    margin-bottom: 50px;
+}
+
+.carousel-caption {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 15px; 
+    border-radius: 5px; 
+    bottom: 20%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    text-align: center; 
+    width: 100%; 
+}
+
+.carousel-caption h5 {
+    margin-bottom: 5px;
+    color: orange;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}
+
+.carousel-caption p {
+    margin-bottom: 0;
+    color: #333;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.carousel-control-prev {
+    left: -100%; 
+}
+
+.carousel-control-next {
+    right: -100%; 
+}
+
+.footer {
+    background-color: #007bff !important;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
