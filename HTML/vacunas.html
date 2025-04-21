@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vacunas</title>
+<link rel="icon" type="img" href="../img/estetoscopio.png">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../CSS2/vacunas.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Hospitality</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../HTML/administrador.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="../HTML/pacientes.html">Pacientes</a></li>
+                <li class="nav-item"><a class="nav-link" href="../HTML/medicamentos.html">Medicamentos</a></li>
+                <li class="nav-item"><a class="nav-link active" href="../HTML/vacunas.html">Vacunas</a></li>
+                <li class="nav-item"><a class="nav-link" href="../HTML/habitaciones.html">Habitaciones</a></li>
+                <li class="nav-item"><a class="nav-link" href="../HTML/index.html">Salir</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<h2>Vacunas</h2>
+<div class="boton" style="text-align: right; margin-bottom: 20px;">
+    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#vaccineModal">
+        Registrar Vacuna
+    </button>
+</div>
+
+<table class="table table-success table-striped" id="vaccinesTable">
+    <thead>
+        <tr>
+            <th>Nombre de la Vacuna</th>
+            <th>Paciente</th>
+            <th>Dosis</th>
+            <th>Fecha de Administración</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Gripe</td>
+            <td>Laura Mosquera</td>
+            <td>Única</td>
+            <td>2025-04-01</td>
+        </tr>
+        <tr>
+            <td>COVID-19</td>
+            <td>Javier Serna</td>
+            <td>Segunda</td>
+            <td>2025-03-15</td>
+        </tr>
+        <tr>
+            <td>Tétanos</td>
+            <td>Isabella Ariza</td>
+            <td>Refuerzo</td>
+            <td>2024-11-20</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="vaccineModal" tabindex="-1" aria-labelledby="vaccineModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="vaccineModalLabel">Registro de nueva Vacuna</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <form id="vaccineForm">
+                    <div class="mb-3">
+                        <label for="vaccineName" class="form-label">Nombre de la Vacuna</label>
+                        <input type="text" class="form-control" id="vaccineName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="vaccinePatient" class="form-label">Paciente</label>
+                        <input type="text" class="form-control" id="vaccinePatient" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="vaccineDose" class="form-label">Dosis</label>
+                        <input type="text" class="form-control" id="vaccineDose" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="vaccineDate" class="form-label">Fecha de Administración</label>
+                        <input type="date" class="form-control" id="vaccineDate" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" id="submitVaccineForm">Registrar Vacuna</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('submitVaccineForm').addEventListener('click', function(event) {
+    event.preventDefault();
+
+        const name = document.getElementById('vaccineName').value;
+        const patient = document.getElementById('vaccinePatient').value;
+        const dose = document.getElementById('vaccineDose').value;
+        const date = document.getElementById('vaccineDate').value;
+
+        if (name && patient && dose && date) {
+            const table = document.getElementById('vaccinesTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            newRow.insertCell(0).textContent = name;
+            newRow.insertCell(1).textContent = patient;
+            newRow.insertCell(2).textContent = dose;
+            newRow.insertCell(3).textContent = date;
+
+            alert('Registro de vacuna completado');
+
+            var modal = bootstrap.Modal.getInstance(document.getElementById('vaccineModal'));
+            modal.hide();
+
+            document.getElementById('vaccineForm').reset();
+        } else {
+            alert('Por favor, completa todos los campos.');
+        }
+    });
+</script>
+
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+
+<footer>
+<div class="footer">
+    <p>&copy; 2025 Hospitality</p>
+</div>
+</footer>
+</body>
+</html>
